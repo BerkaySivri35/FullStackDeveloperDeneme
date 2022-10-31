@@ -1,5 +1,6 @@
 const root = document.getElementById("root");
 
+//Es6
 class TodoApp extends React.Component{
     constructor(props){
         super(props);
@@ -214,3 +215,122 @@ class Action extends React.Component{
 
 
 ReactDOM.render(<TodoApp />, root);
+
+//STATE
+class Car extends React.Component{
+    constructor(props){
+        super(props);
+        console.log(props)
+        this.changeColor = this.changeColor.bind(this);
+        this.changeColorBeyaz = this.changeColorBeyaz.bind(this);
+        this.changeColorMavi = this.changeColorMavi.bind(this);
+
+        this.state = {
+            brand: 'Opel',
+            model: 'Astra',
+            color: 'red',
+            year: 2020
+        }
+    }
+    changeColor(){
+        //console.log(this);
+        this.setState({
+            color: "blue",
+        }) 
+
+    }
+    changeColorBeyaz(){
+        //console.log(this);
+        this.setState({
+            color: "white",
+        }) 
+
+    }
+    changeColorMavi(){
+        this.setState({
+            color:"Blue",
+        })
+    }
+    
+
+    render(){
+        return(
+            <div>
+                <h1>{this.state.brand}</h1>
+                <h3>{this.state.model}</h3>
+                <p>Selected Color: <b>{this.state.color}</b></p>
+                <button onClick={this.changeColor}>Rengi Değiştir</button>
+                <p>
+                    <button 
+                    onClick={this.changeColorBeyaz}>Beyaz
+                    </button>
+                    <button
+                        onClick={this.changeColorMavi}>
+                        Mavi
+                    </button>
+                    <button>
+                        Siyah
+                    </button>
+                    <button>
+                        Turuncu
+                    </button>
+                </p>
+                
+            </div>
+        );
+    }
+}
+
+//Counter APP
+//State
+class Counter extends React.Component{
+    constructor(props){
+        super(props);
+        this.artiBir = this.artiBir.bind(this);
+        this.eksiBir = this.eksiBir.bind(this);
+        this.reset = this.reset.bind(this);
+        this.state = {
+            number: 0,
+        };
+    }
+    artiBir(){
+        this.setState({
+            number: (this.state.number += 1)
+        })
+
+    }
+    eksiBir(){
+        if(this.state.number ==0){
+                this.setState({
+                number : 0
+            })
+            alert("Değer 0 ın altına inemez")
+        }else{
+            this.setState({
+                number: this.state.number -1
+            })
+        }
+        
+        
+    }
+    reset(){
+        this.setState({
+            number: 0
+        })
+        
+    }
+    
+
+    render(){
+        return(
+            <div>
+                <h1>Number: {this.state.number}</h1>
+                <button onClick={this.artiBir}> +1 </button>
+                <button onClick={this.eksiBir}> -1 </button>
+                <button onClick={this.reset}> Reset </button>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<Counter />, root);
