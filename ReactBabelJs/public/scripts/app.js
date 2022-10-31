@@ -1,8 +1,9 @@
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _get() { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get.bind(); } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(arguments.length < 3 ? target : receiver); } return desc.value; }; } return _get.apply(this, arguments); }
-function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
@@ -10,84 +11,126 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 var root = document.getElementById("root");
 
-/* ES6 Class */
-var ES6Person = /*#__PURE__*/function () {
-  function ES6Person() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Berkay";
-    var year = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date().getFullYear();
-    _classCallCheck(this, ES6Person);
-    this.name = name;
-    this.year = year;
+//Es6
+var TodoApp = /*#__PURE__*/function (_React$Component) {
+  _inherits(TodoApp, _React$Component);
+  var _super = _createSuper(TodoApp);
+  function TodoApp() {
+    _classCallCheck(this, TodoApp);
+    return _super.apply(this, arguments);
   }
-  _createClass(ES6Person, [{
-    key: "getAgeOfYear",
-    value: function getAgeOfYear() {
-      return new Date().getFullYear() - this.year;
-    }
-  }, {
-    key: "greeting",
-    value: function greeting(text) {
-      return "".concat(text, ", Benim ad\u0131m ").concat(this.name);
+  _createClass(TodoApp, [{
+    key: "render",
+    value: function render() {
+      var title = "Todo Application";
+      var description = "Bu bir açıklamadır";
+      var app = {
+        title: "Todo Application BackEnd",
+        description: "Lorem, ipsum 2.",
+        items: ["item1", "item2", "item3"]
+      };
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
+        title: app.title,
+        description: app.description
+      }), /*#__PURE__*/React.createElement(TodoList, {
+        items: app.items
+      }), /*#__PURE__*/React.createElement(Action, null));
     }
   }]);
-  return ES6Person;
-}();
-var Student = /*#__PURE__*/function (_ES6Person) {
-  _inherits(Student, _ES6Person);
-  var _super = _createSuper(Student);
-  function Student(name, year, lessons) {
-    var _this;
-    _classCallCheck(this, Student);
-    _this = _super.call(this, name, year);
-    _this.lessons = lessons;
-    return _this;
-  }
-  _createClass(Student, [{
-    key: "teaching",
-    value: function teaching() {
-      return "Öğreniyorum";
+  return TodoApp;
+}(React.Component); //Es5 Header
+var Header = function Header(props) {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, props.title), /*#__PURE__*/React.createElement("p", null, props.description));
+};
+
+//Es6 Header
+/*class Header extends React.Component{
+    render(){
+        return(
+            //props ile yukarıdaki title'ye eriştik.
+            <div>
+                <h1>{this.props.title}</h1> 
+                <p>{this.props.description}</p>
+            </div>
+        ); 
+        
     }
-  }, {
-    key: "greeting2",
-    value: function greeting2(text) {
-      var str = _get(_getPrototypeOf(Student.prototype), "greeting", this).call(this, text);
-      str += "Dersim: ".concat(this.lessons);
-      return str;
-      //Alternatif yazım
-      // return `${super.greeting(text)} Dersim : ${this.lessons}`;
+}
+*/
+var TodoList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(TodoList, _React$Component2);
+  var _super2 = _createSuper(TodoList);
+  function TodoList() {
+    _classCallCheck(this, TodoList);
+    return _super2.apply(this, arguments);
+  }
+  _createClass(TodoList, [{
+    key: "render",
+    value: function render() {
+      //let obj = this.props.items;
+      return /*#__PURE__*/React.createElement(React.Fragment, null, this.props.items.map(function (item, index) {
+        return /*#__PURE__*/React.createElement(TodoItem, {
+          key: index,
+          item: item
+        });
+      }));
     }
   }]);
-  return Student;
-}(ES6Person);
-var ES6pStudent = new Student("Berkay Sivri", "2000", "React.js");
-console.log(ES6pStudent.greeting2(ES6pStudent.name));
-var Teacher = /*#__PURE__*/function (_ES6Person2) {
-  _inherits(Teacher, _ES6Person2);
-  var _super2 = _createSuper(Teacher);
-  function Teacher(name, year, department) {
-    var _this2;
-    _classCallCheck(this, Teacher);
-    _this2 = _super2.call(this, name, year);
-    _this2.department = department;
-    return _this2;
+  return TodoList;
+}(React.Component);
+var TodoItem = /*#__PURE__*/function (_React$Component3) {
+  _inherits(TodoItem, _React$Component3);
+  var _super3 = _createSuper(TodoItem);
+  function TodoItem() {
+    _classCallCheck(this, TodoItem);
+    return _super3.apply(this, arguments);
   }
-  _createClass(Teacher, [{
-    key: "departments",
-    value: function departments() {
-      return 'Departmanım software';
-    }
-  }, {
-    key: "greetingTeacher",
-    value: function greetingTeacher(text) {
-      return "".concat(_get(_getPrototypeOf(Teacher.prototype), "greeting", this).call(this, text), " Departman\u0131m : ").concat(this.department);
+  _createClass(TodoItem, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("li", null, this.props.item);
     }
   }]);
-  return Teacher;
-}(ES6Person);
-var ES6Teacher = new Teacher("Berkay Sivri", 2000, "Web Developer");
-console.log(ES6Teacher.greetingTeacher('Selam'));
+  return TodoItem;
+}(React.Component);
+var Action = /*#__PURE__*/function (_React$Component4) {
+  _inherits(Action, _React$Component4);
+  var _super4 = _createSuper(Action);
+  function Action() {
+    _classCallCheck(this, Action);
+    return _super4.apply(this, arguments);
+  }
+  _createClass(Action, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
+        type: "reset"
+      }, "Clear Items")), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("input", {
+        type: "text",
+        name: "txtItem",
+        id: "txtItem"
+      }), /*#__PURE__*/React.createElement("button", {
+        type: "submit"
+      }, "Add Item")));
+    }
+  }]);
+  return Action;
+}(React.Component); /*const template = (
+                        <div>
+                            <Header/>
+                            <Header/>
+                            <Header/>
+                            <Header/>
+                            <Header/> 
+                        </div>
+                        
+                       <div>
+                            <Header/>
+                            <Todo/>
+                            <Action/>
+                       </div>
+                       
+                    );*/
+ReactDOM.render( /*#__PURE__*/React.createElement(TodoApp, null), root);

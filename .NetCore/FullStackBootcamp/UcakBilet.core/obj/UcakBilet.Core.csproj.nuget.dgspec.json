@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj",
+        "projectName": "UcakBilet.Core",
+        "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj",
+        "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\berka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

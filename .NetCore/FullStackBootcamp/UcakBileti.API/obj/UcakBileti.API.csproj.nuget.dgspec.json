@@ -1,0 +1,265 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBileti.API\\UcakBileti.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj",
+        "projectName": "UcakBilet.Core",
+        "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj",
+        "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\berka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\UcakBilet.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\UcakBilet.Repository.csproj",
+        "projectName": "UcakBilet.Repository",
+        "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\UcakBilet.Repository.csproj",
+        "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\berka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj": {
+                "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.core\\UcakBilet.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\UcakBilet.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\UcakBilet.Service.csproj",
+        "projectName": "UcakBilet.Service",
+        "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\UcakBilet.Service.csproj",
+        "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\berka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\UcakBilet.Repository.csproj": {
+                "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Repository\\UcakBilet.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBileti.API\\UcakBileti.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBileti.API\\UcakBileti.API.csproj",
+        "projectName": "UcakBileti.API",
+        "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBileti.API\\UcakBileti.API.csproj",
+        "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBileti.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\berka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\UcakBilet.Service.csproj": {
+                "projectPath": "C:\\Users\\berka\\Desktop\\FullStackBootcampDeneme\\.NetCore\\FullStackBootcamp\\UcakBilet.Service\\UcakBilet.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
