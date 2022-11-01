@@ -12,227 +12,135 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 var root = document.getElementById("root");
-var TodoApp = /*#__PURE__*/function (_React$Component) {
-  _inherits(TodoApp, _React$Component);
-  var _super = _createSuper(TodoApp);
-  function TodoApp(props) {
+var PhoneApp = /*#__PURE__*/function (_React$Component) {
+  _inherits(PhoneApp, _React$Component);
+  var _super = _createSuper(PhoneApp);
+  function PhoneApp(props) {
     var _this;
-    _classCallCheck(this, TodoApp);
+    _classCallCheck(this, PhoneApp);
     _this = _super.call(this, props);
+    _this.changeBlue = _this.changeBlue.bind(_assertThisInitialized(_this));
+    _this.changeWhite = _this.changeWhite.bind(_assertThisInitialized(_this));
+    _this.changeOrange = _this.changeOrange.bind(_assertThisInitialized(_this));
+    _this.changeBlack = _this.changeBlack.bind(_assertThisInitialized(_this));
     _this.state = {
-      items: ["item1", "item2", "item3"] //props aracalığı ile
+      brand: "Samsung",
+      model: "A53",
+      hafıza: "128GB",
+      ram: "8GB RAM",
+      resimSrc: ["https://productimages.hepsiburada.net/s/194/1100/110000161749625.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160064097.jpg/format:webp", "https://productimages.hepsiburada.net/s/194/1100/110000161705148.jpg/format:webp"]
     };
-
-    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this)); //State aracılı ile
-    _this.addItem = _this.addItem.bind(_assertThisInitialized(_this));
-    _this.deleteItem = _this.deleteItem.bind(_assertThisInitialized(_this));
+    console.log(_this.state.resimSrc);
     return _this;
   }
-  _createClass(TodoApp, [{
-    key: "clearItems",
-    value: function clearItems() {
+  _createClass(PhoneApp, [{
+    key: "changeBlue",
+    value: function changeBlue() {
       this.setState({
-        items: []
+        resimSrc: ["https://productimages.hepsiburada.net/s/193/1100/110000160472866.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160063098.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160644421.jpg/format:webp"]
       });
     }
   }, {
-    key: "addItem",
-    value: function addItem(item) {
-      if (!item) {
-        return "Boş değer ekleyemezsin";
-      } else if (this.state.items.includes(item)) {
-        return "Aynı elemanı ekleyemezsiniz";
-      }
-      this.setState(function (prevState) {
-        return {
-          items: prevState.items.concat(item)
-        };
-      });
-    }
-  }, {
-    key: "deleteItem",
-    value: function deleteItem(item) {
-      this.setState(function (prevState) {
-        var arr = prevState.items.filter(function (i) {
-          return item != i;
-        });
-        return {
-          items: arr
-        };
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var title = "Todo Application";
-      var description = "Bu bir açıklamadır";
-      var app = {
-        title: "Todo Application BackEnd",
-        description: "Lorem, ipsum 2."
-      };
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
-        title: app.title,
-        description: app.description
-      }), /*#__PURE__*/React.createElement(TodoList, {
-        deleteItem: this.deleteItem,
-        items: this.state.items,
-        clearItems: this.clearItems
-      }), /*#__PURE__*/React.createElement(Action, {
-        addItem: this.addItem
-      }));
-    }
-  }]);
-  return TodoApp;
-}(React.Component); //Es5 Header
-/*const Header = function(props){
-    return(
-        <div>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
-        </div>
-    );
-}
-*/
-//Es6 Header
-var Header = /*#__PURE__*/function (_React$Component2) {
-  _inherits(Header, _React$Component2);
-  var _super2 = _createSuper(Header);
-  function Header() {
-    _classCallCheck(this, Header);
-    return _super2.apply(this, arguments);
-  }
-  _createClass(Header, [{
-    key: "render",
-    value: function render() {
-      return (
-        /*#__PURE__*/
-        //props ile yukarıdaki title'ye eriştik.
-        React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, this.props.title), /*#__PURE__*/React.createElement("p", null, this.props.description))
-      );
-    }
-  }]);
-  return Header;
-}(React.Component);
-var TodoList = /*#__PURE__*/function (_React$Component3) {
-  _inherits(TodoList, _React$Component3);
-  var _super3 = _createSuper(TodoList);
-  function TodoList(props) {
-    _classCallCheck(this, TodoList);
-    return _super3.call(this, props); //this.clearItems = this.clearItems.bind(this)
-  }
-  _createClass(TodoList, [{
-    key: "clearItems",
-    value: function clearItems() {
-      console.log(this.props);
-      console.log(this.props.items); //iilgili props un içindeki itemlara erişmiş olduk.
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-      //let obj = this.props.items;
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", null, this.props.items.map(function (item, index) {
-        return /*#__PURE__*/React.createElement(TodoItem, {
-          deleteItem: _this2.props.deleteItem,
-          key: index,
-          item: item
-        });
-      })), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
-        onClick: this.props.clearItems
-      }, "Clear Items")));
-    }
-  }]);
-  return TodoList;
-}(React.Component);
-var TodoItem = /*#__PURE__*/function (_React$Component4) {
-  _inherits(TodoItem, _React$Component4);
-  var _super4 = _createSuper(TodoItem);
-  function TodoItem(props) {
-    var _this3;
-    _classCallCheck(this, TodoItem);
-    _this3 = _super4.call(this, props);
-    _this3.deleteItem = _this3.deleteItem.bind(_assertThisInitialized(_this3));
-    return _this3;
-  }
-  _createClass(TodoItem, [{
-    key: "deleteItem",
-    value: function deleteItem() {
-      console.log("tıklandı");
-      this.props.deleteItem(this.props.item);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("li", null, this.props.item, /*#__PURE__*/React.createElement("button", {
-        onClick: this.deleteItem
-      }, "Sil"));
-    }
-  }]);
-  return TodoItem;
-}(React.Component);
-var Action = /*#__PURE__*/function (_React$Component5) {
-  _inherits(Action, _React$Component5);
-  var _super5 = _createSuper(Action);
-  function Action(props) {
-    var _this4;
-    _classCallCheck(this, Action);
-    _this4 = _super5.call(this, props);
-    _this4.onFormSubmit = _this4.onFormSubmit.bind(_assertThisInitialized(_this4));
-    _this4.state = {
-      err: ''
-    };
-    return _this4;
-  }
-  _createClass(Action, [{
-    key: "onFormSubmit",
-    value: function onFormSubmit(e) {
-      e.preventDefault();
-      //console.log(e.target.elements.txtItem.value); //inputa girilen değeri aldı.
-
-      var item = e.target.elements.txtItem.value.trim(); //trim ile boşluları sildik
-      var errr = this.props.addItem(item);
+    key: "changeWhite",
+    value: function changeWhite() {
       this.setState({
-        err: errr
+        resimSrc: ["https://productimages.hepsiburada.net/s/194/1100/110000161749627.jpg/format:webp", "https://productimages.hepsiburada.net/s/194/1100/110000161816872.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160644424.jpg/format:webp"]
       });
-      e.target.elements.txtItem.value = "";
-      /*if(item){ //eğer item varsa.
-          console.log(item);
-          e.target.elements.txtItem.value = "";
-      }*/
+    }
+  }, {
+    key: "changeOrange",
+    value: function changeOrange() {
+      this.setState({
+        resimSrc: ["https://productimages.hepsiburada.net/s/194/1100/110000161816871.jpg/format:webp", "https://productimages.hepsiburada.net/s/194/1100/110000162346200.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160644423.jpg/format:webp"]
+      });
+      console.log("Turuncu seçildi");
+    }
+  }, {
+    key: "changeBlack",
+    value: function changeBlack() {
+      this.setState({
+        resimSrc: ["https://productimages.hepsiburada.net/s/194/1100/110000161749625.jpg/format:webp", "https://productimages.hepsiburada.net/s/193/1100/110000160064097.jpg/format:webp", "https://productimages.hepsiburada.net/s/194/1100/110000161705148.jpg/format:webp"]
+      });
+      console.log("Siyah seçildi");
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, this.state.err && /*#__PURE__*/React.createElement("p", {
-        style: {
-          color: "red"
-        }
-      }, this.state.err), /*#__PURE__*/React.createElement("form", {
-        onSubmit: this.onFormSubmit
-      }, /*#__PURE__*/React.createElement("input", {
-        type: "text",
-        name: "txtItem",
-        id: "txtItem"
-      }), /*#__PURE__*/React.createElement("button", {
-        type: "submit"
-      }, "Add Item")));
+      return /*#__PURE__*/React.createElement("div", {
+        className: "container pt-5"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "row p-3 border border-3 rounded-3 shadow-lg p-3 mb-5 bg-body rounded"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "col-6 "
+      }, /*#__PURE__*/React.createElement("h1", {
+        className: ""
+      }, "Marka: ", this.state.brand), /*#__PURE__*/React.createElement("h3", {
+        className: ""
+      }, "Model: ", this.state.model), /*#__PURE__*/React.createElement("p", {
+        className: ""
+      }, "Haf\u0131za: ", /*#__PURE__*/React.createElement("b", null, this.state.hafıza)), /*#__PURE__*/React.createElement("p", {
+        className: ""
+      }, "Ram: ", /*#__PURE__*/React.createElement("b", null, this.state.ram)), /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-primary me-2",
+        onClick: this.changeBlue
+      }, "Mavi"), /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-light me-2",
+        onClick: this.changeWhite
+      }, "Beyaz"), /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-warning me-2",
+        onClick: this.changeOrange
+      }, "Turuncu"), /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-dark",
+        onClick: this.changeBlack
+      }, "Siyah")), /*#__PURE__*/React.createElement("div", {
+        className: "col-6 d-flex justify-content-center"
+      }, /*#__PURE__*/React.createElement("div", {
+        id: "carouselExampleControls",
+        className: "carousel slide",
+        "data-bs-ride": "carousel"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "carousel-inner"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "carousel-item active"
+      }, /*#__PURE__*/React.createElement("img", {
+        src: this.state.resimSrc[0],
+        className: "d-block w-100",
+        alt: "..."
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "carousel-item"
+      }, /*#__PURE__*/React.createElement("img", {
+        src: this.state.resimSrc[1],
+        className: "d-block w-100",
+        alt: "..."
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "carousel-item"
+      }, /*#__PURE__*/React.createElement("img", {
+        src: this.state.resimSrc[2],
+        className: "d-block w-100",
+        alt: "..."
+      }))), /*#__PURE__*/React.createElement("button", {
+        className: "carousel-control-prev",
+        type: "button",
+        "data-bs-target": "#carouselExampleControls",
+        "data-bs-slide": "prev"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "carousel-control-prev-icon bg-danger",
+        "aria-hidden": "true"
+      }), /*#__PURE__*/React.createElement("span", {
+        className: "visually-hidden"
+      }, "Previous")), /*#__PURE__*/React.createElement("button", {
+        className: "carousel-control-next",
+        type: "button",
+        "data-bs-target": "#carouselExampleControls",
+        "data-bs-slide": "next"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "carousel-control-next-icon bg-danger",
+        "aria-hidden": "true"
+      }), /*#__PURE__*/React.createElement("span", {
+        className: "visually-hidden"
+      }, "Next"))))));
     }
   }]);
-  return Action;
-}(React.Component); /*const template = (
-                        <div>
-                            <Header/>
-                            <Header/>
-                            <Header/>
-                            <Header/>
-                            <Header/> 
-                        </div>
-                        
-                       <div>
-                            <Header/>
-                            <Todo/>
-                            <Action/>
-                       </div>
-                       
-                    );*/
-ReactDOM.render( /*#__PURE__*/React.createElement(TodoApp, null), root);
+  return PhoneApp;
+}(React.Component);
+ReactDOM.render( /*#__PURE__*/React.createElement(PhoneApp, null), root);
